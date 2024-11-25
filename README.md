@@ -1,5 +1,15 @@
 #   Assignment 2 
+## Summary my product
+**My Website Bike Store Management system with features like inventory tracking, order placement, and automatic stock updates when a bike is ordered.**
 
+## Features :
+1. Inventory Management
+2. Order Placement
+3. Auto-Update Inventory
+4. Error Handling
+5. Validation
+6. Total Revenue
+**Backend Development:**
 ##  My server site use Technology.
 **Backend Development:**
   - Node.js
