@@ -6,7 +6,7 @@
   - Express.js
   - Mongoose
   - TypeScript
-**Package Management:**
+## Package use Management 
 1. yarn add -D typescript @types/express @types/node
 2. yarn add dotenv
 3. yarn add express
