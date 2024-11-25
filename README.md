@@ -29,7 +29,7 @@
 ## Seen my server site provide infomation
 1. **GitHub Link: https://github.com/Mosiur411/assignment2-server**
 2. **Live Link :https://typescriptserver.vercel.app/**
-3. **Api Chack Postman Link :**
+3. **Api Chack Postman Link :https://grey-sunset-799900.postman.co/workspace/ede93167-73e8-4ada-b4ed-c2b076d4a612/overview**
 3. **Explanation My Porject Video Link:**
 
 
