@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { OrderService } from './order.service';
-
+// create order funtion
 const createOrder = async (req: Request, res: Response) => {
     try {
         const data = req.body
@@ -20,6 +20,7 @@ const createOrder = async (req: Request, res: Response) => {
         });
     }
 };
+// get revenue 
 const getrevenueOrder = async (req: Request, res: Response) => {
     try {
         const result = await OrderService.getrevenueOrderDB()

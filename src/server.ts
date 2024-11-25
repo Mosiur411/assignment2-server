@@ -4,7 +4,7 @@ import config from './app/config'
 
 const port = config.port || 3000;
 
-
+// database and server site connect
 async function connectdatabase() {
     try {
         await mongoose.connect(config.database_url as string);

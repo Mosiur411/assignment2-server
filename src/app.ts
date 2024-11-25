@@ -5,7 +5,7 @@ import { OrderRoute } from './app/modules/order/order.route';
 
 const app: Express = express();
 
-//middleware
+//middleware 
 app.use(express.json())
 app.use(cors())
 
@@ -14,7 +14,10 @@ app.get('/',(req:Request,res:Response)=>{
     res.send("Hello world")
 
 })
+// product handel all route
 app.use('/api/products', ProductRoute)
+// order handel all route
 app.use('/api/orders', OrderRoute)
+
 export default app;
 

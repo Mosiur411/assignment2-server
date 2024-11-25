@@ -1,5 +1,6 @@
 import mongoose, { Schema, model } from 'mongoose';
 import { TOrder } from './order.interface';
+// order schena and validation hanel
 const orderSchema = new Schema<TOrder>({
     email: {
         type: String,

@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { TProduct } from './product.interface';
+// create product mongoose schema
 const productSchema = new Schema<TProduct>({
     name: {
         type: String,
@@ -50,6 +51,7 @@ const productSchema = new Schema<TProduct>({
     },
 }, { timestamps: true });
 
+// handel product quntity
 productSchema.pre('save', function (next) {
     if (this.quantity === 0) {
         this.inStock = false;
@@ -58,11 +60,12 @@ productSchema.pre('save', function (next) {
     }
     next();
 });
-
+// product find then not get delete product
 productSchema.pre('find', function (next) {
     this.find({ isDeleted: { $ne: true } });
     next();
 });
+// single product id get produt not show product 
 productSchema.pre('findOne', function (next) {
     this.find({ isDeleted: { $ne: true } });
     next();

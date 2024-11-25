@@ -1,3 +1,4 @@
+// create prodcut type
 export type TProduct = {
     name: string,
     brand: string,
@@ -8,6 +9,7 @@ export type TProduct = {
     inStock: boolean,
     isDeleted?: boolean,
 }
+// update product object value
 export type TProductUpdate = {
     name?: string,
     brand?: string,
@@ -17,6 +19,7 @@ export type TProductUpdate = {
     quantity?: number,
     inStock?: boolean,
 }
+// search product type handel
 export type TProductQuery = {
     name?: string,
     brand?: string,
