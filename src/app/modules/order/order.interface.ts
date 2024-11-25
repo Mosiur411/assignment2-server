@@ -1,6 +1,7 @@
+import mongoose from 'mongoose'
 export type TOrder = {
     email: string,
-    product : string,
-    totalPrice : number,
+    product : mongoose.Schema.Types.ObjectId,
     quantity: number,
+    totalPrice : number,
 }

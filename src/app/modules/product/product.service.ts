@@ -4,7 +4,7 @@ import { Product } from "./product.model";
 
 
 const createProductDB = async (productData: TProduct) => {
-    const result = (await Product.create(productData));
+    const result = await Product.create(productData);
     return result;
 };
 const getallProductDB = async (productData: TProductQuery) => {
