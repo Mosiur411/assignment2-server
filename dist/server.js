@@ -16,6 +16,7 @@ const app_1 = __importDefault(require("./app"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const config_1 = __importDefault(require("./app/config"));
 const port = config_1.default.port || 3000;
+// database and server site connect
 function connectdatabase() {
     return __awaiter(this, void 0, void 0, function* () {
         try {

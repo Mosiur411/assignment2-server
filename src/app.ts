@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from 'express'
 import cors from 'cors'
 import { ProductRoute } from './app/modules/product/product.route';
 import { OrderRoute } from './app/modules/order/order.route';
+import { mongooseErrorHandler } from './app/middleware/mongooseErrorHandler';
 
 const app: Express = express();
 
@@ -18,6 +19,7 @@ app.get('/',(req:Request,res:Response)=>{
 app.use('/api/products', ProductRoute)
 // order handel all route
 app.use('/api/orders', OrderRoute)
+
 
 export default app;
 

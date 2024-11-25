@@ -12,22 +12,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductService = void 0;
 const product_model_1 = require("./product.model");
 const createProductDB = (productData) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = (yield product_model_1.Product.create(productData));
+    // create product and retun create product result
+    const result = yield product_model_1.Product.create(productData);
     return result;
 });
 const getallProductDB = (productData) => __awaiter(void 0, void 0, void 0, function* () {
+    // get all product and result return 
     const result = yield product_model_1.Product.find(productData);
     return result;
 });
 const getsingleProductDB = (productId) => __awaiter(void 0, void 0, void 0, function* () {
+    // get single product 
     const result = yield product_model_1.Product.findOne({ _id: productId });
     return result;
 });
 const updateProductDB = (updateData, productId) => __awaiter(void 0, void 0, void 0, function* () {
+    // product update 
     const result = yield product_model_1.Product.findByIdAndUpdate({ _id: productId }, updateData);
     return result;
 });
 const deleteProductDB = (productId) => __awaiter(void 0, void 0, void 0, function* () {
+    // delete product just product status changes
     const result = yield product_model_1.Product.updateOne({ _id: productId }, { isDeleted: true });
     return result;
 });

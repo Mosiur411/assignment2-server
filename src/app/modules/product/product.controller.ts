@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { ProductService } from './product.service';
+import { mongooseErrorHandler } from '../../middleware/mongooseErrorHandler';
 
 // create product function
 const createProduct = async (req: Request, res: Response) => {
@@ -12,11 +13,8 @@ const createProduct = async (req: Request, res: Response) => {
             data: result,
         });
     } catch (err: any) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = mongooseErrorHandler(err)
+        res.status(500).json(error)   
     }
 };
 // get all product function
@@ -40,11 +38,8 @@ const getallProduct = async (req: Request, res: Response) => {
             data: result,
         });
     } catch (err: any) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = mongooseErrorHandler(err)
+        res.status(500).json(error)   
     }
 };
 // get single product function
@@ -58,11 +53,8 @@ const getsingleProduct = async (req: Request, res: Response) => {
             data: result
         });
     } catch (err: any) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = mongooseErrorHandler(err)
+        res.status(500).json(error)   
     }
 };
 // update product function
@@ -77,11 +69,8 @@ const updateProduct = async (req: Request, res: Response) => {
             data: result
         });
     } catch (err: any) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = mongooseErrorHandler(err)
+        res.status(500).json(error)   
     }
 };
 // delete prodct funtion
@@ -95,12 +84,8 @@ const deleteProduct = async (req: Request, res: Response) => {
             data: result
         });
     } catch (err: any) {
-        console.log(err)
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = mongooseErrorHandler(err)
+        res.status(500).json(error)   
     }
 };
 export const ProductController = { createProduct, getallProduct, getsingleProduct, deleteProduct, updateProduct }

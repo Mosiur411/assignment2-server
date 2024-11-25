@@ -23,6 +23,8 @@ const createOrderDB = async (orderData: TOrder) => {
             { new: true }
         );
         return saveOrder;
+    } else {
+        return false
     }
 };
 // order get total revenu
@@ -36,7 +38,7 @@ const getrevenueOrderDB = async () => {
         },
     ]);
     const formatResult = {
-        totalRevenue:revenueData[0]?.totalRevenue
+        totalRevenue: revenueData[0]?.totalRevenue
     }
     return formatResult;
 };

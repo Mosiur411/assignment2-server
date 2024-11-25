@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductController = void 0;
 const product_service_1 = require("./product.service");
+// create product function
 const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const data = req.body;
@@ -29,6 +30,7 @@ const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
+// get all product function
 const getallProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let filter = {};
@@ -57,6 +59,7 @@ const getallProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
+// get single product function
 const getsingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { productId } = req.params;
@@ -75,6 +78,7 @@ const getsingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
         });
     }
 });
+// update product function
 const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { productId } = req.params;
@@ -94,6 +98,7 @@ const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
 });
+// delete prodct funtion
 const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { productId } = req.params;
@@ -105,6 +110,7 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
+        console.log(err);
         res.status(500).json({
             success: false,
             message: err.message || 'something went wrong',
