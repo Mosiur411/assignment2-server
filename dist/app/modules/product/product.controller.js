@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductController = void 0;
 const product_service_1 = require("./product.service");
+const mongooseErrorHandler_1 = require("../../middleware/mongooseErrorHandler");
 // create product function
 const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -23,11 +24,8 @@ const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = (0, mongooseErrorHandler_1.mongooseErrorHandler)(err);
+        res.status(500).json(error);
     }
 });
 // get all product function
@@ -52,11 +50,8 @@ const getallProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = (0, mongooseErrorHandler_1.mongooseErrorHandler)(err);
+        res.status(500).json(error);
     }
 });
 // get single product function
@@ -71,11 +66,8 @@ const getsingleProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
         });
     }
     catch (err) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = (0, mongooseErrorHandler_1.mongooseErrorHandler)(err);
+        res.status(500).json(error);
     }
 });
 // update product function
@@ -91,11 +83,8 @@ const updateProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = (0, mongooseErrorHandler_1.mongooseErrorHandler)(err);
+        res.status(500).json(error);
     }
 });
 // delete prodct funtion
@@ -110,12 +99,8 @@ const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
-        console.log(err);
-        res.status(500).json({
-            success: false,
-            message: err.message || 'something went wrong',
-            error: err,
-        });
+        const error = (0, mongooseErrorHandler_1.mongooseErrorHandler)(err);
+        res.status(500).json(error);
     }
 });
 exports.ProductController = { createProduct, getallProduct, getsingleProduct, deleteProduct, updateProduct };

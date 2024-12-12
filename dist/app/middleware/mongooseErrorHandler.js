@@ -2,10 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mongooseErrorHandler = void 0;
 const mongoose_1 = require("mongoose");
-// Mongoose Validation Error Handler
-const mongooseErrorHandler = (err, req, res, next) => {
+const mongooseErrorHandler = (err) => {
     if (err instanceof mongoose_1.Error.ValidationError) {
-        // Format Mongoose validation errors
         const formattedErrors = Object.keys(err.errors).reduce((acc, key) => {
             const error = err.errors[key];
             acc[key] = {
@@ -25,11 +23,10 @@ const mongooseErrorHandler = (err, req, res, next) => {
                 name: err.name,
                 errors: formattedErrors,
             },
-            stack: err.stack, // Optional, remove in production
+            stack: err.stack,
         };
-        return res.status(400).json(response);
+        return response;
     }
-    // Pass to the next error handler if not a Mongoose error
-    next(err);
+    return err;
 };
 exports.mongooseErrorHandler = mongooseErrorHandler;
